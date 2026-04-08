@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-
+#include <string.h>
 void build_project(char *lang, char *project_path){
 //utils.c den bilgi alan fonksiyon
 char **argv = NULL;
@@ -35,7 +35,7 @@ if (pid < 0){
     return;
     }
 else if (pid == 0) {
-    if(execvp(argv[0,argv]) == -1){
+    if(execvp(argv[0],argv) == -1){
         perror("execvp error");
     }
     exit(EXIT_FAILURE);
